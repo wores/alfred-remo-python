@@ -41,7 +41,7 @@ class RegisterCommand:
             appliance_id = remo_con['id']
             nickname = remo_con['nickname']
             if appliance_id == conf.aircon_id:
-                nickname = nickname + '(registered)'
+                nickname += '(registered)'
             wf.add_item(title = nickname, subtitle=appliance_id, icon='icon.png', arg = appliance_id, valid = True)
 
         wf.send_feedback()
