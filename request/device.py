@@ -6,7 +6,7 @@ from remo_request import RemoRequest
 class ListRequest(RemoRequest):
 
     def __init__(self, config):
-        super(DeviceList, self).__init__(config)
+        super(ListRequest, self).__init__(config)
 
     def method(self):
         return 'GET'

@@ -250,7 +250,7 @@ python ./command/change_temperature_of_aircon.py $query</string>
 				<key>runningsubtext</key>
 				<string>...loading</string>
 				<key>script</key>
-				<string>python temp_humo.py</string>
+				<string>python remo_command.py show_temperature_and_humidity</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
