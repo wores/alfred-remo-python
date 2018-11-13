@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.krd.nature-remo</string>
+	<string>com.wrs.nature-remo</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -93,6 +93,53 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>remo status</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...loading</string>
+				<key>script</key>
+				<string>python remo_command.py show_temperature_and_humidity</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>室温と湿度を表示する</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>CFAB5884-6EE4-440F-A49A-3A2701F65D0F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
@@ -135,6 +182,27 @@ python ./command/change_temperature_of_aircon.py $query</string>
 			<string>E487B56B-83D2-4B84-B2E8-EFF97D2BBEF1</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>remo setup</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>resiter access token</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>65AA9873-BAB9-46CC-84B0-60712F3A2666</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -188,6 +256,29 @@ python ./command/change_temperature_of_aircon.py $query</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
+				<string>python register_command.py register_access_token {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4BC479EE-BBE7-4439-9B1E-F28EAB7B8269</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
 				<string>python aircon_command.py power_off</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
@@ -223,97 +314,6 @@ python ./command/change_temperature_of_aircon.py $query</string>
 			<string>96F59623-F01F-430A-B78E-4F96DF6B48BA</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>remo status</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>...loading</string>
-				<key>script</key>
-				<string>python remo_command.py show_temperature_and_humidity</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>室温と湿度を表示する</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>CFAB5884-6EE4-440F-A49A-3A2701F65D0F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>remo setup</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>resiter access token</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>65AA9873-BAB9-46CC-84B0-60712F3A2666</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>python register_command.py register_access_token {query}</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>4BC479EE-BBE7-4439-9B1E-F28EAB7B8269</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -458,21 +458,21 @@ python register_command.py register_aircon_id $query</string>
 			<key>xpos</key>
 			<integer>320</integer>
 			<key>ypos</key>
-			<integer>730</integer>
+			<integer>470</integer>
 		</dict>
 		<key>4BC479EE-BBE7-4439-9B1E-F28EAB7B8269</key>
 		<dict>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>750</integer>
 			<key>ypos</key>
-			<integer>590</integer>
+			<integer>190</integer>
 		</dict>
 		<key>65AA9873-BAB9-46CC-84B0-60712F3A2666</key>
 		<dict>
 			<key>xpos</key>
-			<integer>60</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<integer>590</integer>
+			<integer>190</integer>
 		</dict>
 		<key>96F59623-F01F-430A-B78E-4F96DF6B48BA</key>
 		<dict>
@@ -500,14 +500,14 @@ python register_command.py register_aircon_id $query</string>
 			<key>xpos</key>
 			<integer>60</integer>
 			<key>ypos</key>
-			<integer>870</integer>
+			<integer>610</integer>
 		</dict>
 		<key>CFAB5884-6EE4-440F-A49A-3A2701F65D0F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>60</integer>
+			<integer>490</integer>
 			<key>ypos</key>
-			<integer>460</integer>
+			<integer>60</integer>
 		</dict>
 		<key>E487B56B-83D2-4B84-B2E8-EFF97D2BBEF1</key>
 		<dict>
@@ -521,7 +521,7 @@ python register_command.py register_aircon_id $query</string>
 			<key>xpos</key>
 			<integer>60</integer>
 			<key>ypos</key>
-			<integer>730</integer>
+			<integer>470</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
