@@ -15,11 +15,11 @@ class AirconCommand:
     def show_status(self, wf):
         config = create_config()
         req = appliance.ListRequest(config)
-        dic = RemoClient.call(req)
+        dicts = RemoClient.call(req)
         aircon = None
-        for d in dic:
-            if d['id'] == config.aircon_id:
-                aircon = d['settings']
+        for dic in dicts:
+            if dic['id'] == config.aircon_id:
+                aircon = dic['settings']
                 break
 
         if aircon is None:
