@@ -28,7 +28,8 @@ class AirconCommand:
             wf.send_feedback()
             return
 
-        aircon['button'] = 'ON' if len(aircon.get('button', '')) == 0 else 'OFF'
+        power_state = aircon.get('button', '')
+        aircon['button'] = 'ON' if len(power_state) == 0 else 'OFF'
         text = u"設定温度: {temp}度\\nモード: {mode}\\nvol: {vol}\\n電源: {button}".format(**aircon)
         notify.notify(u'エアコン設定', text)
         wf.add_item(title = text, icon='icon.png', arg = text, valid = True)
