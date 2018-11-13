@@ -9,6 +9,7 @@ from workflow.notify import notify
 import config
 import request.appliance as appliance
 from remo_client import RemoClient
+import utils
 
 
 class RegisterCommand:
@@ -47,12 +48,8 @@ class RegisterCommand:
         wf.send_feedback()
 
 
-COMMAND_DICT = {}
-for func_name, func in inspect.getmembers(RegisterCommand(), inspect.ismethod):
-    COMMAND_DICT[func_name] = func
-
-
 if __name__ == '__main__':
+    func_dict = utils.create_instance_func_dict(RegisterCommand)
     key = sys.argv[1]
     wf = Workflow()
-    sys.exit(wf.run(COMMAND_DICT[key]))
+    sys.exit(wf.run(func_dict[key]))

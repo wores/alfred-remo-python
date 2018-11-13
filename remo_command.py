@@ -7,6 +7,7 @@ from workflow import Workflow, notify
 from config import create_config
 import request.device as device
 from remo_client import RemoClient
+import utils
 
 
 class RemoCommand:
@@ -22,12 +23,8 @@ class RemoCommand:
         wf.send_feedback()
 
 
-COMMAND_DICT = {}
-for func_name, func in inspect.getmembers(RemoCommand(), inspect.ismethod):
-    COMMAND_DICT[func_name] = func
-
-
 if __name__ == '__main__':
+    func_dict = utils.create_instance_func_dict(RemoCommand)
     key = sys.argv[1]
     wf = Workflow()
-    sys.exit(wf.run(COMMAND_DICT[key]))
+    sys.exit(wf.run(func_dict[key]))
