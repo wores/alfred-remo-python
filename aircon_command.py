@@ -51,7 +51,7 @@ class AirconCommand:
 
 
     def change_temperature(self, wf):
-        temperature = wf.args[0]
+        temperature = wf.args[2]
         req = aircon.ChangeTemperatureRequest(create_config(), temperature)
         dic = RemoClient.call(req)
         temperature = dic['temp']
