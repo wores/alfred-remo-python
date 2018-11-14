@@ -3,15 +3,8 @@
 import urllib2, urllib
 from abc import ABCMeta, abstractmethod
 import os
-# from enum import Enum, unique
 
 from workflow import Workflow
-
-# @unique
-# class HttpMethod(Enum):
-#     get = 0
-#     post = 1
-
 class RemoRequest(object):
     __metaclass__ = ABCMeta
 
@@ -26,8 +19,6 @@ class RemoRequest(object):
         return url
 
     def _encode_param(self, param_dic={}):
-        # print(param_dic)
-        # param_tuple = [(k, str(v)) for k, v in param_dic]
         return urllib.urlencode(param_dic)
 
     def _add_common_header(self, req):
