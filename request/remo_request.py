@@ -60,8 +60,8 @@ class RemoRequest(object):
 
     @abstractmethod
     def method(self):
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def path(self):
-        pass
+        raise NotImplementedError
