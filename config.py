@@ -67,8 +67,3 @@ def update_config(data_dic):
 
 def create_config():
     return Config(__readFile())
-
-
-if __name__ == '__main__':
-    wf = Workflow()
-    sys.exit(wf.run(update_access_token))
