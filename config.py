@@ -56,7 +56,7 @@ def update_config(data_dic):
     config_path = __getDefaultConfigPath()
     if not os.path.exists(config_path):
         os.makedirs(config_path)
-        os.chmod(config_path, 0777)
+        os.chmod(config_path, 0600)
 
     current = __readFile()
     current.update(data_dic)
